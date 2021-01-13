@@ -43,6 +43,7 @@ import { ProblemConstraintsView } from './modelView/ProblemConstraintsView';
 import { ModelHierarchyProvider } from './symbols/ModelHierarchyProvider';
 import { PlannersConfiguration } from './configuration/PlannersConfiguration';
 import { registerPlanReport } from './planReport/planReport';
+import { PddlBook } from './notebook/PddlBook';
 
 const PDDL_CONFIGURE_PARSER = 'pddl.configureParser';
 const PDDL_LOGIN_PARSER_SERVICE = 'pddl.loginParserService';
@@ -266,6 +267,8 @@ async function activateWithTelemetry(_operationId: string, context: ExtensionCon
 	});
 
 	plannersConfiguration.registerBuiltInPlannerProviders();
+
+	new PddlBook(context);
 
 	console.log('PDDL Extension initialized.');
 

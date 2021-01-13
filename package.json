@@ -44,6 +44,7 @@
     "workspaceContains:.planning.domains.session.json",
     "onView:pddl.planning.domains",
     "onView:pddl.tests.explorer",
+    "onNotebook:pddl-notebook",
     "onUri"
   ],
   "main": "./out/extension",
@@ -980,6 +981,18 @@
         "variables": {
           "PddlPlanHappenings": "pddl.selectAndActivateHappenings"
         }
+      }
+    ],
+    "notebookProvider": [
+      {
+        "viewType": "pddl-notebook",
+        "displayName": "PDDL Notebook",
+        "priority": "option",
+        "selector": [
+          {
+            "filenamePattern": "*.pddlbook"
+          }
+        ]
       }
     ]
   },
